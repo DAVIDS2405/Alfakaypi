@@ -1,0 +1,14 @@
+.main-content{
+  background: linear-gradient(50deg, rgba(24,57,88,1) 0%, rgba(181,186,191,1) 100%);
+}
+.wrapperCard {
+  background-color: red;
+}
+.card-header img {
+  width: 120px;
+}
+.btn-round-color-new{
+  background: linear-gradient(50deg, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 100%) !important;
+  box-shadow: none !important;
+}
+

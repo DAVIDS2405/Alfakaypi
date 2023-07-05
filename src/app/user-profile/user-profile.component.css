@@ -1,0 +1,115 @@
+.main-content{
+  background: linear-gradient(50deg, rgba(24,57,88,1) 0%, rgba(181,186,191,1) 100%);
+}
+.card-header-color{
+  background: radial-gradient(circle, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 68%) !important;
+  box-shadow: none !important;
+}
+.btn-round-color-new{
+  background: linear-gradient(50deg, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 100%) !important;
+  box-shadow: none !important;
+}
+
+.link-color{
+  color: cyan;
+  /* background-image: linear-gradient(60deg, #E21143, #FFB03A);
+  background-clip: text;
+  color: transparent; */
+}
+label {
+  color: #f44336;
+}
+.copy-button{
+  padding: 0px 10px;
+  margin-left: 5px;
+  background-color: #5784f5;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.copy-button:active{
+  background: #809ce3;
+}
+.copy-button::before{
+  content: "Copiado";
+  position: absolute;
+  top: -45px;
+  right: 56%;
+  background: #5c81dc;
+  padding: 8px 10px;
+  border-radius:20px;
+  font-size: 15px;
+  display: none;
+}
+.copy-button::after{
+  content: "";
+  position: absolute;
+  top: -11px;
+  right: 60%;
+  width: 10px;
+  height: 10px;
+  background:#5c81dc ;
+  transform: rotate(45deg);
+  display: none;
+}
+.copy-button.active::before,
+.copy-button.active::after{
+  display: block;
+}
+@media screen and (max-width: 1280px){
+  .copy-button::before{
+    right: 50%;
+  }
+  .copy-button::after{
+    right: 55%;
+  }
+}
+@media screen and (max-width: 1024px){
+  .copy-button::before{
+    right: 35%;
+  }
+  .copy-button::after{
+    right: 38%;
+  }
+}
+@media screen and (max-width: 768px){
+  .copy-button::before{
+    right: 35%;
+  }
+  .copy-button::after{
+    right: 38%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .copy-button::before{
+     top: -29px;
+     right: 50%;
+  }
+  .copy-button::after{
+    top: 5px;
+    right: 55%;
+  }
+}
+@media screen and (max-width: 360px){
+  .copy-button::before{
+     top: -29px;
+     right: 50%;
+  }
+  .copy-button::after{
+    top: 5px;
+    right: 55%;
+  }
+}
+@media screen and (max-width: 280px){
+  .copy-button::before{
+     top: -29px;
+     right: 50%;
+  }
+  .copy-button::after{
+    top: 5px;
+    right: 55%;
+  }
+}

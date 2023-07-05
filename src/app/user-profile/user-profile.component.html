@@ -1,0 +1,107 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger card-header-color">
+              <h4 class="card-title">Link para referir</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Link</th>
+                    <th></th>
+                  </thead>
+                  <tbody >
+                    <tr *ngFor="let nombre of usuarioList" >
+                      <td>
+                        <a *ngIf="!linkDeshabilitado" class="link-color" id="copylink" href="https://novabit.tech/participacion/#/register?ref={{nombre.usr_web}}" target="_blank" rel="noopener">https://novabit.tech/participacion/#/register?ref={{nombre.usr_web}}  </a><button *ngIf="!linkDeshabilitado" class="copy-button" (click)="copyHeroName()"><i class=" fa fa-clone"></i></button><span *ngIf="linkDeshabilitado">Link deshabilitado</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger card-header-color">
+            <h4 class="card-title">Editar perfil</h4>
+            <p class="card-category">Complete su perfil</p>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-md-12" *ngFor="let perfil of usuarioList">
+                  <mat-form-field class="example-full-width" >
+                    <input
+                      matInput
+                      placeholder="Correo electronico"
+                      type="email"
+                      id="email"
+                      value="{{perfil.eml}}"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" *ngFor="let perfil of usuarioList">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nombres y Apellidos" type="text" id="name" value="{{perfil.name}}" />
+                  </mat-form-field>
+                </div>
+               
+              </div>
+              <div class="row">
+                <div class="col-md-12" *ngFor="let perfil of usuarioList">
+                  <mat-form-field class="example-full-width" >
+                    <input matInput placeholder="Dirección" type="text" id="adress" value="{{perfil.dir}}"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" >
+                  <mat-form-field class="example-full-width" >
+                     <mat-label>País</mat-label>
+                        <mat-select placeholder="País" id = pai >
+                            <mat-option *ngFor="let pais of paisList"  [value]="pais.id"(click)="changePais(pais.id)" >{{pais.name}}</mat-option>
+                        </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6" *ngIf="selectedPais == 59">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Provincia</mat-label>
+                    <mat-select placeholder="Provincia" id ="pro">
+                        <mat-option *ngFor="let provincia of provinciaList" [value]="provincia.id" (click)="changeProvincia(provincia.id)">{{provincia.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" *ngFor="let perfil of usuarioList">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Wallet Personal (USDT Red TRC20)" type="text" id="wallet_usuario" value="{{perfil.wal_usr_web}}" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <a
+                class="btn btn-danger btn-round btn-round-color-new"
+                (click)="UpdateUser()"
+                >Actualizar perfil
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

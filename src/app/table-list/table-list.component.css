@@ -1,0 +1,79 @@
+.main-content{
+  background: linear-gradient(50deg, rgba(24,57,88,1) 0%, rgba(181,186,191,1) 100%);
+}
+.main-content a {
+  color: white;
+}
+.hide{
+  display: none;
+}
+.card-header-color{
+  background: radial-gradient(circle, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 68%) !important;
+  box-shadow: none !important;
+}
+.pedir_dinero{
+  text-align: center;
+}
+.text-primary th {
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 0px 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  text-align: center;
+}
+.text-secondary td{
+  text-align: left !important;
+}
+.text-secondary .Date, .text-secondary .Roi{
+  text-align: right !important;
+}
+.total {
+  color: yellow !important;
+}
+.revision{
+  background-color:  rgb(226, 77, 8) !important;
+}
+.pagado{
+  background-color: #77b11c !important;
+}
+
+.pagos {
+  text-align: center;
+}
+.Button{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.btn-bubble {
+  color: white;
+  background-color: #77b11c;
+  background-repeat: no-repeat;
+}
+.btn-bubble:hover, .btn-bubble:focus {
+  -webkit-animation: bubbles 1s forwards ease-out;
+          animation: bubbles 1s forwards ease-out;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 18% 99% / 1.15em 1.15em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 68% 110% / 0.89em 0.89em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 17% 146% / 1.08em 1.08em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 88% 136% / 0.55em 0.55em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 59% 115% / 1.2em 1.2em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 68% 122% / 0.93em 0.93em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 73% 107% / 0.99em 0.99em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 41% 144% / 0.92em 0.92em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 5% 115% / 0.56em 0.56em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 95% 120% / 1.03em 1.03em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 31% 86% / 0.55em 0.55em;
+  background-color: #77b11c;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes bubbles {
+  100% {
+    background-position: 14% -398%, 69% -344%, 13% -23%, 88% -143%, 53% -170%, 61% 38%, 69% -143%, 38% -181%, -1% -359%, 92% -310%, 32% -366%;
+    box-shadow: inset 0 -6.5em 0 #0072c4;
+  }
+}
+
+@keyframes bubbles {
+  100% {
+    background-position: 14% -398%, 69% -344%, 13% -23%, 88% -143%, 53% -170%, 61% 38%, 69% -143%, 38% -181%, -1% -359%, 92% -310%, 32% -366%;
+    box-shadow: inset 0 -6.5em 0 #0072c4;
+  }
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em 2em;
+}

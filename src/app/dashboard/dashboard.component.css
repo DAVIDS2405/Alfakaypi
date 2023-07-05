@@ -1,0 +1,26 @@
+.main-content {
+   background: linear-gradient(50deg, rgba(24,57,88,1) 0%, rgba(181,186,191,1) 100%);
+}
+.hide{
+  display: none;
+  
+}
+.card-icon{
+  background: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.participacion_img{
+  margin-top: 10px;
+}
+.rendimiento-disponible-img{
+  margin-top: 7px;
+}
+.secret-card{
+  display: none;
+}
+.card-header-color{
+  background: radial-gradient(circle, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 68%) !important;
+  box-shadow: none !important;
+}
+

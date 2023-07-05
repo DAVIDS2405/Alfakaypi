@@ -1,0 +1,236 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-success card-header-color">
+              <h4 class="card-title">Criptos</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Nombre</th>
+                    <th class="hide">Fecha</th>
+                    <th class="hide">Estado</th>
+                    <th class="hide">Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let coin of coingeko">
+                      <td>
+                        <img [src]="coin.image" alt="{{coin.name}}">
+                        <span>{{ coin.name }}</span>
+                        <span>{{coin.symbol}}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <img class="material-icons" src ="assets/img/participacion.png" height="100px" >
+              </div>
+              <p class="card-category">Pack Participación</p>
+              <h3 class="card-title">
+                <span>$ {{totalFactura | number : "1.2-2" }}</span>
+                
+              </h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats ">
+                <i class="material-icons text-danger">share</i>
+                <a href="javascript:void(0)" routerLink="">Obtenga más participación</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <img class="material-icons" src ="assets/img/pago_mensual.png" height="100px" >
+              </div>
+              <p class="card-category">Rendimiento mensual</p>
+              <h3 class="card-title"><span>$ {{totalMensual | number : "1.2-2"}}</span></h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats ">
+                <i class="material-icons">date_range</i> Últimos meses
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <img class="material-icons" src="assets/img/rendimiento_total.png" height="100px" >
+              </div>
+              <p class="card-category">Rendimiento total</p>
+              <h3
+                class="card-title"
+               
+              >
+                <span>$ {{ totalPagado | number : "1.2-2" }}</span>
+              </h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats hide">
+                <i class="material-icons">payments</i> Tracked from Github
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon img-material-icon" >
+                <img class="material-icons participacion_img"  src="assets/img/Bono_participacion.png" height="100px" >
+              </div>
+              <p class="card-category">Comisiones Mensuales</p>
+              <h3 class="card-title"><span>$ {{totalComisionesMensuales | number : "1.2-2"}}</span></h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats">
+                <i class="material-icons">update</i> Just Updated
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon img-material-icon" >
+                <img class="material-icons rendimiento-disponible-img"  src="assets/img/disponible.png" height="100px" >
+              </div>
+              <p class="card-category">Rendimiento disponible</p>
+              <h3 class="card-title"><span>$ {{totalPedidos | number : "1.2-2"}}</span></h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats">
+                <i class="material-icons">update</i> Just Updated
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon img-material-icon" >
+                <img class="material-icons  participacion_img"  src="assets/img/Comision_Total.png" height="100px" >
+              </div>
+              <p class="card-category">Comision Total</p>
+              <h3 class="card-title"><span *ngFor="let comisiones of comisionesList">$ {{comisiones.val_rbo_com_ref | number : "1.2-2"}}</span></h3>
+            </div>
+            <div class="card-footer hide">
+              <div class="stats">
+                <i class="material-icons">update</i> Just Updated
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row secret-card">
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart" id="dailySalesChart"></div>
+            </div>
+            <div class="card-body">
+              
+              <h4 class="card-title">ROI mensual</h4>
+              <p class="card-category">
+                <span class="text-success"
+                  ><i class="fa fa-long-arrow-up"></i> 55%
+                </span>
+                Gestion diaria
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">access_time</i> updated 4 minutes ago
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart" id="websiteViewsChart"></div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Informe mensual</h4>
+              <p class="card-category">Acumulados mensuales</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">access_time</i> ROI diario y mensual
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart" id="completedTasksChart"></div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Volumen ventas</h4>
+              <p class="card-category">Acumulados por niveles</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">schedule</i> campaign sent 2 days ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-success card-header-color">
+              <h4 class="card-title">Equipo</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Integrantes</th>
+                    <th class="hide">Fecha</th>
+                    <th class="hide">Estado</th>
+                    <th class="hide">Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cuenta of referidosList">
+                      <td>
+                        {{ cuenta.name }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

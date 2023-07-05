@@ -1,0 +1,113 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Solicitud</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Solicitud</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                    <th>Comprar</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cuenta of pedidoList">
+                      <td>
+                        {{ cuenta.num_ped }}
+                      </td>
+                      <td>
+                        {{ cuenta.fch | date : "short" }}
+                      </td>
+                      <td>
+                        <ng-container *ngIf="cuenta.est === 'P'">
+                          Pendiente
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'C'">
+                          Cancelado
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'Q'">
+                          Parcialmente aprobado
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'S'">
+                          Aprobado
+                        </ng-container>
+                      </td>
+                      <td class="text-primary total">
+                        $ {{ cuenta.tot_ped | number : "1.2-2" }}
+                      </td>
+                      <td class="text-primary pagos">
+                        <ng-container *ngIf="cuenta.est === 'P'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round revision"
+                            >Revisión</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'C'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round cancelado"
+                            >Cancelado</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'Q'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round revision"
+                            >Revisión</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'S'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round aprobado"
+                            (click)="comprar(plan)"
+                            >Pagar</a
+                          >
+                        </ng-container>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <!-- 
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title" id="exampleModalLabel">QR de pago</h5>
+        </div>
+        <div class="modal-body text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <qr-code [value]="valueQR" size="225"></qr-code>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+--></div>

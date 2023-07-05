@@ -1,0 +1,99 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="javascript:void(0)">
+              <img class="img" src="assets/img/logo.png" />
+            </a>
+          </div>
+          <div class="card-body">
+            <h6 class="card-category text-gray">NOVABIT</h6>
+            <h4 class="card-title">Acceda a su cuenta</h4>
+            <form
+              [formGroup]="loginForm"
+              autocomplete="off"
+              novalidate
+              (ngSubmit)="login(loginForm.value)"
+            >
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <mat-form-field
+                    class="example-full-width"
+                    appearance="outline"
+                  >
+                    <mat-label>Usuario</mat-label>
+                    <input
+                      matInput
+                      placeholder="Usuario"
+                      type="text"
+                      formControlName="usr_web"
+                    />
+                    <mat-error *ngIf="hasError('usr_web', 'required')"
+                      >Usuario obligatorio!</mat-error
+                    >
+                    <mat-error *ngIf="hasError('usr_web', 'incorrect')"
+                      >Usuario incorrecto!</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <mat-form-field
+                    class="example-full-width"
+                    appearance="outline"
+                  >
+                    <mat-label>Contraseña</mat-label>
+                    <input
+                      matInput
+                      [type]="hide ? 'password' : 'text'"
+                      placeholder="Contraseña"
+                      formControlName="pwd_web"
+                    />
+                    <button
+                      mat-icon-button
+                      matSuffix
+                      (click)="hide = !hide"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide"
+                    >
+                      <mat-icon>{{
+                        hide ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="hasError('pwd_web', 'required')"
+                      >Contraseña obligatoria!</mat-error
+                    >
+                    <mat-error *ngIf="hasError('pwd_web', 'incorrect')"
+                      >Contraseña incorrecta!</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+              </div>
+              <button
+                mat-raised-button
+                [disabled]="!loginForm.valid"
+                class="btn btn-danger"
+              >
+                Iniciar sesión
+              </button>
+              <div class="clearfix"></div>
+            </form>
+            <p class="card-description">
+              ¿Olvidó su contraseña?
+              <a routerLink="/forgot-password" class="text-danger"
+                >Recuperar contraseña</a
+              >
+            </p>
+            <p class="card-description">
+              ¿No tiene una cuenta?
+              <a routerLink="/register" class="text-danger">Cree una</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

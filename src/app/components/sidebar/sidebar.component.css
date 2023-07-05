@@ -1,0 +1,17 @@
+.sidebar-wrapper {
+  background-color: black;
+  color: white;
+}
+.logo {
+  background-color: black;
+  color: white;
+}
+.logo a {
+  color: rgb(255, 255, 255);
+}
+.sidebar .sidebar-background:after {
+  background: rgb(0, 0, 0);
+}
+@media screen and (max-width: 991px){
+
+}

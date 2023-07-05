@@ -1,0 +1,213 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h3 class="card-title">Notifications</h3>
+        <p class="card-category">
+          Handcrafted by our friend
+          <a target="_blank" href="https://github.com/mouse0270"
+            >Robert McIntosh</a
+          >. Please checkout the
+          <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank"
+            >full documentation.</a
+          >
+        </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="card-title">Notifications Style</h4>
+            <div class="alert alert-info">
+              <span>Plan 1</span>
+            </div>
+            <div class="alert alert-info">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span>Plan 2</span>
+            </div>
+            <div
+              class="alert alert-info alert-with-icon"
+              data-notify="container"
+            >
+              <i class="material-icons" data-notify="icon">add_alert</i>
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span data-notify="message">Plan3</span>
+            </div>
+            <div
+              class="alert alert-info alert-with-icon"
+              data-notify="container"
+            >
+              <i class="material-icons" data-notify="icon">add_alert</i>
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span data-notify="message">plan4</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="card-title">Plan 5</h4>
+            <div class="alert alert-info">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span> <b> Info - </b> plan 5 ".alert-info"</span>
+            </div>
+            <div class="alert alert-success">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span> <b> Success - </b> Plan 6 ".alert-success"</span>
+            </div>
+            <div class="alert alert-warning">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span> <b> Warning - </b> Plan 7 ".alert-warning"</span>
+            </div>
+            <div class="alert alert-danger">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span> <b> Danger - </b> Plan 8 ".alert-danger"</span>
+            </div>
+            <div class="alert alert-primary">
+              <button
+                mat-button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <i class="material-icons">close</i>
+              </button>
+              <span> <b> Primary - </b> Plan9 ".alert-primary"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="places-buttons">
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+              <h4 class="card-title">
+                Novedades de planes
+                <p class="category">Click to view notifications</p>
+              </h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+              <div class="row">
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('top', 'left')"
+                  >
+                    Superior Izq
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('top', 'center')"
+                  >
+                    Superior Cen
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('top', 'right')"
+                  >
+                    Superior Der
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+              <div class="row">
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('bottom', 'left')"
+                  >
+                    Inferior Izq
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('bottom', 'center')"
+                  >
+                    Inferior Cen
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    mat-raised-button
+                    class="btn btn-danger btn-block"
+                    (click)="showNotification('bottom', 'right')"
+                  >
+                    Inferior Der
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 mt-5" *ngFor="let plan of planList">
+          <div class="card card-profile">
+            <div class="card-header">
+              <div fxFlex="0 80 80%">
+                <img mat-card-image [src]="convertirBase64_Img(plan.img)" />
+              </div>
+            </div>
+            <div class="card-body">
+              <div fxFlex="0 0 calc(50%-36px)">
+                <h4 class="card-category text-gray">{{ plan.name }}</h4>
+                <h4 class="card-title">
+                  <span>DESDE: $ {{ plan.pvp_des | number : "1.2-2" }}</span>
+                  <span>HASTA: $ {{ plan.pvp_has | number : "1.2-2" }}</span>
+                </h4>
+                <p class="card-description">
+                  REF: <strong>{{ plan.ref }}</strong>
+                  <br />
+                  ROI MES:
+                  <strong>% {{ plan.por_cien | number : "1.2-2" }}</strong>
+                </p>
+              </div>
+
+              <a
+                href="javascript:void(0)"
+                class="btn btn-danger btn-round btn-round-color-new"
+                (click)="comprar(plan)"
+                >Comprar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

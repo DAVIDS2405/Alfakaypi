@@ -1,0 +1,46 @@
+.main-content{
+  background: linear-gradient(50deg, rgba(24,57,88,1) 0%, rgba(181,186,191,1) 100%);
+}
+.main-content a {
+  color: white;
+}
+.text-primary th {
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 0px 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  text-align: center;
+}
+.total {
+  color: yellow !important;
+}
+
+.pagos {
+  text-align: center;
+}
+
+.cancelado {
+  cursor: default !important;
+  text-align: center;
+}
+
+.revision {
+  background-color: rgb(226, 77, 8) !important;
+  cursor: default !important;
+  text-align: center;
+}
+
+.aprobado {
+  background-color: rgb(46, 230, 46) !important;
+  border-color: rgb(46, 230, 46) !important;
+  cursor: default !important;
+  box-shadow: 0 2px 2px 0 rgba(56, 240, 50, 0.14),
+    0 3px 1px -2px rgba(59, 243, 42, 0.2), 0 1px 5px 0 rgba(85, 243, 45, 0.12) !important;
+  text-align: center;
+}
+
+.card-header-color{
+  background: radial-gradient(circle, rgba(214,180,32,1) 0%, rgba(71,28,0,1) 68%) !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,154 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header card-header-danger card-header-color">
+              <h4 class="card-title mt-0">Pagos</h4>
+              <p class="card-category">Pagos enviados</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class="text-primary">
+                    <th>Inversion Inicial</th>
+                    <th>Roi a recibir</th>
+                    <th>Fecha</th>
+                    <th class="hide"></th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cuenta of cuentaList">
+                      <td>
+                        {{ cuenta.imp_tot | number : "1.2-2" }}
+                      </td>
+
+                      <td class="Roi">
+                        {{ cuenta.roi_cob | number : "1.2-2" }}
+                      </td>
+                      <td class="Date">
+                        {{ cuenta.fch_emi | date : "short" }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header card-header-danger card-header-color">
+              <h4 class="card-title mt-0">Pagos</h4>
+              <p class="card-category">Pagos enviados</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class="text-primary">
+                    <th>Numero de solicitud</th>
+                    <th>Mes</th>
+                    <th>Fecha de pago</th>
+                    <th>Valor a cobrar</th>
+                    <th>Estado</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pagos2 of PagoList2">
+                      <td>{{ pagos2.num_ped }}</td>
+                      <td>{{ pagos2.num_ped_prv }}</td>
+                      <td>{{ pagos2.fch_rec | date : "short" }}</td>
+                      <td>{{ pagos2.bas_gen | number : "1.2-2" }}</td>
+                      <td>
+                        <ng-container *ngIf="pagos2.est === 'R'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round revision"
+                          >
+                            procesando</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="pagos2.est === 'S'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round pagado"
+                          >
+                            Pagado</a
+                          >
+                        </ng-container>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header card-header-danger card-header-color">
+              <h4 class="card-title mt-0">Retiros</h4>
+              <p class="card-category">Pedir retiros</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover" id="miTabla">
+                  <thead class="text-primary">
+                    <th>Numero de solicitud</th>
+                    <th>Mes</th>
+                    <th>Fecha de cobro</th>
+                    <th>Valor a cobrar</th>
+                    <th>Estado</th>
+                    <th>Cobrar</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pagos of PagoList">
+                      <td>{{ pagos.num_ped }}</td>
+                      <td>
+                        <ng-container *ngIf="pagos.num_ped_prv === '14'; else roi">
+                           {{ pagos.num_ped_prv }}  Comisión
+                          </ng-container>
+                          <ng-template #roi>
+                           {{ pagos.num_ped_prv }}  ROI
+                          </ng-template>
+                      </td>      
+                      <td> {{ pagos.fch | date : "short" }}</td>
+                      <td>  {{ pagos.bas_gen | number : "1.2-2" }}</td>
+                      <td>
+                        <ng-container *ngIf="pagos.est === 'P'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round"
+                          >
+                            pendiente</a
+                          >
+                        </ng-container>
+                      </td>
+                      <td *ngIf="pagos.est === 'P'" class="pedir_dinero">
+                        <input
+                          type="checkbox"
+                          [(ngModel)]="pagos.selected"
+                          (change)="updateTotal()"
+                          [disabled]="!isFechaHabilitada()"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="Button">
+                  <a
+                    class="btn btn-bubble"
+                    (click)="enviarPagos()"
+                    title="Cobrar pagos seleccionados"
+                    >Enviar {{ totalSeleccionado | number : "1.2-2" }} de
+                    pagos</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+

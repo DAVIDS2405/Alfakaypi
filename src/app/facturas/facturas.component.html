@@ -1,0 +1,84 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger card-header-color">
+              <h4 class="card-title">Participaciones</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body ">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Solicitud</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cuenta of cuentaList">
+                      <td>
+                        {{ cuenta.id }}
+                      </td>
+                      <td>
+                        {{ cuenta.fch_emi | date : "short" }}
+                      </td>
+                      <td class="text-primary pagos">
+                        <ng-container *ngIf="cuenta.est === 'P'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round revision"
+                          >
+                            En revisión</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'Z'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round "
+                            >Cancelado</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'I'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round impagado"
+                            >Por cobrar</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'C'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round aprobado"
+                            >Cuenta Activa</a
+                          >
+                        </ng-container>
+                        <ng-container *ngIf="cuenta.est === 'B'">
+                          <a
+                            href="javascript:void(0)"
+                            class="btn btn-danger btn-round abonado"
+                            >Abonado</a
+                          >
+                        </ng-container>
+                      </td>
+                      <td class="text-primary total">
+                        $ {{ cuenta.imp_tot | number : "1.2-2" }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Referidos mios</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Solicitud</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cuenta of referidosList">
+                      <td>
+                        {{ cuenta.name }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Link para referir</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table"
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTrigger"
+                >
+                  <thead class="text-primary">
+                    <th>Link</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let nombre of usuarioList">
+                      <td>
+                        <a href="https://novabit.tech/participacion/#/register?ref={{nombre.usr_web}}" target="_blank" rel="noopener">https://novabit.tech/participacion/#/register?ref=<span>{{nombre.usr_web}}</span></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
