@@ -153,7 +153,7 @@ export class PlanesComponent implements OnInit {
 
 Antes de enviar la solicitud, lea atentamente y asegúrese de que comprende toda la información correspondiente a su cuenta, incluidas las Condiciones comerciales generales, las Condiciones de negocio para el mercado de valores, las Condiciones generales para gestión y las Condiciones generales para la transferencia internacional de fondos.
 
-Con vistas a cumplir la normativa en materia de prevención del blanqueo de capitales, Novabit Investments  está obligada por mandato legal a obtener la siguiente documentación. Asimismo, Novabit Investments se reserva el derecho a solicitar documentación adicional durante el proceso de aprobación de cuenta.
+Con vistas a cumplir la normativa en materia de prevención del blanqueo de capitales, Alfakaypi Investments  está obligada por mandato legal a obtener la siguiente documentación. Asimismo, Alfakaypi Investments se reserva el derecho a solicitar documentación adicional durante el proceso de aprobación de cuenta.
 
                               DOCUMENTACIÓN
 
@@ -190,11 +190,11 @@ Este documento debe ser válido e incluir la dirección de residencia actual del
 
 Información debe de venir emitida por una entidad bancaria o legal, debidamente firmada o sellada.
 
-Envíe la solicitud realizada, junto con la documentación arriba mencionada, directamente a Novabit Investments:
+Envíe la solicitud realizada, junto con la documentación arriba mencionada, directamente a Alfakaypi Investments:
 
-Correo electrónico: Escanee la solicitud junto con la documentación y envíela por correo electrónico a: info@novabit.tech. 
+Correo electrónico: Escanee la solicitud junto con la documentación y envíela por correo electrónico a: info@alfakaypi.com. 
 
-Para preguntas relativas a este formulario o a los documentos requeridos, contáctenos al +1(408)690-8479 o por e-mail a servicioalcliente@novabit.tech.</textarea></div>`,
+Para preguntas relativas a este formulario o a los documentos requeridos, contáctenos al +1(408)690-8479 o por e-mail a servicioalcliente@alfakaypi.com.</textarea></div>`,
       icon: "warning",
       input: "checkbox",
       inputPlaceholder: "Acepto los términos y condiciones",

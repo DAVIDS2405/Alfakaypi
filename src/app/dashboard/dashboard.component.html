@@ -40,12 +40,12 @@
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <img class="material-icons" src ="assets/img/participacion.png" height="100px" >
+                <img class="material-icons" src="assets/img/participacion.png" height="100px">
               </div>
               <p class="card-category">Pack Participación</p>
               <h3 class="card-title">
                 <span>$ {{totalFactura | number : "1.2-2" }}</span>
-                
+
               </h3>
             </div>
             <div class="card-footer hide">
@@ -60,7 +60,7 @@
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <img class="material-icons" src ="assets/img/pago_mensual.png" height="100px" >
+                <img class="material-icons" src="assets/img/pago_mensual.png" height="100px">
               </div>
               <p class="card-category">Rendimiento mensual</p>
               <h3 class="card-title"><span>$ {{totalMensual | number : "1.2-2"}}</span></h3>
@@ -76,13 +76,10 @@
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <img class="material-icons" src="assets/img/rendimiento_total.png" height="100px" >
+                <img class="material-icons" src="assets/img/rendimiento_total.png" height="100px">
               </div>
               <p class="card-category">Rendimiento total</p>
-              <h3
-                class="card-title"
-               
-              >
+              <h3 class="card-title">
                 <span>$ {{ totalPagado | number : "1.2-2" }}</span>
               </h3>
             </div>
@@ -96,8 +93,8 @@
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
-              <div class="card-icon img-material-icon" >
-                <img class="material-icons participacion_img"  src="assets/img/Bono_participacion.png" height="100px" >
+              <div class="card-icon img-material-icon">
+                <img class="material-icons participacion_img" src="assets/img/Bono_participacion.png" height="100px">
               </div>
               <p class="card-category">Comisiones Mensuales</p>
               <h3 class="card-title"><span>$ {{totalComisionesMensuales | number : "1.2-2"}}</span></h3>
@@ -112,8 +109,8 @@
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
-              <div class="card-icon img-material-icon" >
-                <img class="material-icons rendimiento-disponible-img"  src="assets/img/disponible.png" height="100px" >
+              <div class="card-icon img-material-icon">
+                <img class="material-icons rendimiento-disponible-img" src="assets/img/disponible.png" height="100px">
               </div>
               <p class="card-category">Rendimiento disponible</p>
               <h3 class="card-title"><span>$ {{totalPedidos | number : "1.2-2"}}</span></h3>
@@ -128,11 +125,12 @@
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
-              <div class="card-icon img-material-icon" >
-                <img class="material-icons  participacion_img"  src="assets/img/Comision_Total.png" height="100px" >
+              <div class="card-icon img-material-icon">
+                <img class="material-icons  participacion_img" src="assets/img/Comision_Total.png" height="100px">
               </div>
               <p class="card-category">Comision Total</p>
-              <h3 class="card-title"><span *ngFor="let comisiones of comisionesList">$ {{comisiones.val_rbo_com_ref | number : "1.2-2"}}</span></h3>
+              <h3 class="card-title"><span *ngFor="let comisiones of comisionesList">$ {{comisiones.val_rbo_com_ref |
+                  number : "1.2-2"}}</span></h3>
             </div>
             <div class="card-footer hide">
               <div class="stats">
@@ -141,7 +139,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
       <div class="row secret-card">
         <div class="col-md-4">
@@ -150,11 +148,10 @@
               <div class="ct-chart" id="dailySalesChart"></div>
             </div>
             <div class="card-body">
-              
+
               <h4 class="card-title">ROI mensual</h4>
               <p class="card-category">
-                <span class="text-success"
-                  ><i class="fa fa-long-arrow-up"></i> 55%
+                <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%
                 </span>
                 Gestion diaria
               </p>
@@ -200,37 +197,41 @@
         </div>
       </div>
       <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-success card-header-color">
-              <h4 class="card-title">Equipo</h4>
-              <p class="card-category"></p>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table
-                  class="table"
-                  datatable
-                  [dtOptions]="dtOptions"
-                  [dtTrigger]="dtTrigger"
-                >
-                  <thead class="text-primary">
-                    <th>Integrantes</th>
-                    <th class="hide">Fecha</th>
-                    <th class="hide">Estado</th>
-                    <th class="hide">Total</th>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let cuenta of referidosList">
-                      <td>
-                        {{ cuenta.name }}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+        <div class="card">
+          <div class="card-header card-header-success card-header-color">
+            <h4 class="card-title">Equipo</h4>
+            <p class="card-category"></p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead class="text-primary">
+                  <th>Integrantes</th>
+                  <th class="hide">Fecha</th>
+                  <th class="hide">Estado</th>
+                  <th class="hide">Total</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cuenta of referidosList">
+                    <td>
+                      {{ cuenta.name }}
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>

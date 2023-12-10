@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  url: 'https://proyectos.empiresystemsa.com/novabits/Novabit_dat_dat/v1/'
+  url: 'https://proyectos.empiresystemsa.com/alfak/Empire_CE_Dat_dat/v1/'
 };

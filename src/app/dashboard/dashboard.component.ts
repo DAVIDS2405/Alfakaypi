@@ -449,6 +449,10 @@ export class DashboardComponent implements OnInit {
     for (let index = 0; index < errors.length; index++) {
       errorList += errors[index].message + "<br>";
     }
+    console.log(errorList)
+    if (errorList == "undefined<br>") {
+      errorList = "Algo salido mal inténtalo en unos minutos";
+    }
     Swal.fire({
       title: "Error!",
       html: errorList,

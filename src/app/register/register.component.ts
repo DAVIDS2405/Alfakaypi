@@ -21,7 +21,7 @@ import { UsuarioRelacionaResponse } from "app/models/usuariorelacion_response";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  myValue: string = "novabit";
+  myValue: string = "alfakaypi";
   paisList: Pais[] = [];
   provinciaList: Provincia[] = [];
   UsuarioRelacionado: UsuarioRelaciona[] = [];
